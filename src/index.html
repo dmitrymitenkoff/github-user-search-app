@@ -8,20 +8,51 @@
   <title>GitHub user search app</title>
 </head>
 <body>
+  <main class="site">
+    <header>
+      <h1>devfinder</h1>
+      <span>Light</span>
+      <img src="./assets/icon-sun.svg" alt="">
+    </header>
 
-  devfinder
+    <section class="search">
+      <img src="./assets/icon-search.svg" alt="">
+      <input type="text" placeholder="Search GitHub username...">
+      <button type="submit">Search</button>
+    </section>
 
-  Light
-  Dark
+    <article class="user__card">
+      <section class="user__bio">
+        <img src="" alt="" class="user__avatar">
+        <h2 class="user__name">The Octocat</h2>
+        <p class="user__profile__name">@octocat</p>
+        <p class="user__account__creation">Joined <span class="user__account__date">25 Jan 2011</span></p>
+      </section>
 
-  Search GitHub username...
-  Search
+      <section class="user__about">
+        <p class="user__intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ut quis inventore impedit quod doloremque numquam saepe eaque tenetur, cumque aut soluta repellendus illum. Deserunt, facilis. Nemo, quod quam? Vero.</p>
+        <table class="user__data">
+          <tr>
+            <th>Repos</th>
+            <th>Followers</th>
+            <th>Following</th>
+          </tr>
+          <tr>
+            <td class="user__repos">8</td>
+            <td class="user__followers">3938</td>
+            <td class="user__following">9</td>
+          </tr>
+        </table>
+      </section>
 
-  Joined
-
-  Repos
-  Followers
-  Following
+      <ul class="user__social__links">
+        <li><img src="./assets/icon-location.svg" alt=""> San Francisco</li>
+        <li><img src="./assets/icon-website.svg" alt=""><a href="">https://github.blog</a></li>
+        <li><img src="./assets/icon-twitter.svg" alt=""><a href="#">Not available</a></li>
+        <li><img src="./assets/icon-company.svg" alt=""><a href="#">@github</a></li>
+      </ul>
+    </article>
+  </main>
 
   <script src="./index.js"></script>
 </body>
