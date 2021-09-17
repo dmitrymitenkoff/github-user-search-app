@@ -1,0 +1,131 @@
+@use "../abstracts/variables" as *;
+
+body {
+  background-color: $kashmir-blue; // delete
+  font-family: $space-mono, sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+// HEADER
+h1 {
+  font-weight: 700;
+  font-size: 2.6rem;
+  line-height: 3.851rem;
+}
+
+.mode {
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1.925rem;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: $white;
+}
+
+// SEARCH SECTION
+// Input placeholder text styling:
+// source: https://css-tricks.com/almanac/selectors/p/placeholder/
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: $white;
+  font-weight: 400;
+  font-family: inherit;
+  font-size: 1.3rem;
+  line-height: 0.25rem;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: $white;
+  font-weight: 400;
+  font-family: inherit;
+  font-size: 1.3rem;
+  line-height: 0.25rem;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: $white;
+  font-weight: 400;
+  font-family: inherit;
+  font-size: 1.3rem;
+  line-height: 0.25rem;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: $white;
+  font-weight: 400;
+  font-family: inherit;
+  font-size: 1.3rem;
+  line-height: 0.25rem;
+}
+
+.search-btn {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 2.073rem;
+  cursor: pointer;
+  color: $white;
+}
+
+// USER CARD
+
+// User bio
+.user {
+  text-align: left;
+
+  &__name {
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2.37rem;
+    color: $white;
+  }
+  &__account {
+    font-size: 1.3rem;
+    line-height: 1.925rem;
+    color: $azure;
+  }
+
+  &__account-creation {
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.925rem;
+    color: $white;
+  }
+}
+
+// Profile
+.profile {
+  &__intro {
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+    color: $white;
+  }
+
+  &__table {
+    & th {
+      font-size: 1.1rem;
+      line-height: 1.629rem;
+      color: $white;
+    }
+
+    & td {
+      font-weight: 700;
+      font-size: 1.6rem;
+      line-height: 2.37rem;
+      color: $white;
+    }
+  }
+}
+
+// Social
+.social {
+  list-style-type: none;
+  color: $white;
+  font-size: 1.3rem;
+  line-height: 1.925rem;
+  & a {
+    color: $white;
+    text-decoration: none;
+  }
+}
