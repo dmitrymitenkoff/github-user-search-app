@@ -1,0 +1,19 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+
+  h1 {
+    justify-self: flex-start;
+    align-self: center;
+  }
+
+  .mode {
+    align-self: center;
+    flex-grow: 2;
+  }
+
+  .mode-icon {
+    align-self: center;
+  }
+}

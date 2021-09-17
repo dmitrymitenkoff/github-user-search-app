@@ -1,0 +1,13 @@
+@use "../abstracts/variables" as *;
+
+body {
+  background-color: $dark-body;
+}
+
+input {
+  background-color: $cloud-burst;
+}
+
+.card {
+  background-color: $cloud-burst;
+}

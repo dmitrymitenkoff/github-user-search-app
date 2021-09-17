@@ -1,0 +1,52 @@
+@use "../abstracts/variables" as *;
+
+// Input section
+.search {
+  margin-bottom: 1.6rem;
+  position: relative;
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 1.6rem;
+  }
+
+  &__btn {
+    position: absolute;
+    right: 0;
+  }
+
+  .visually-hidden {
+    border-width: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    width: 1px !important;
+  }
+}
+
+// Input field
+#search {
+  color: $white;
+  font-weight: 400;
+  font-family: inherit;
+  font-size: 1.3rem;
+  line-height: 0.25rem;
+  padding: 0.25em 0.5em;
+  background-color: $cloud-burst;
+  border-radius: 1.5rem;
+  border: 1px solid $cloud-burst;
+  height: 6rem;
+  display: block;
+  width: 100%;
+  transition: 180ms box-shadow ease-in-out;
+
+  &:focus {
+    border-color: $kashmir-blue;
+    box-shadow: 0 0 0 2px lighten($ebony-clay, $amount: 40);
+    outline: 1px solid transparent;
+  }
+}
