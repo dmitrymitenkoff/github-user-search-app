@@ -37,6 +37,7 @@ h1 {
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: $white;
+  opacity: 1;
   font-weight: 400;
   font-family: inherit;
   font-size: 1.3rem;

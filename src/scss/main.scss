@@ -1,12 +1,17 @@
+// GLOBAL
 @use "./base/normalize";
-@use "./base/base";
+@use "./base/global-styles";
 @use "./base/typography";
 
+// COMPONENTS
 @use "./components/searchBar";
 
-@use "./layout/header";
-@use "./layout/site";
+// LAYOUTS
+@use "./layout/site-layout";
+@use "./layout/header-layout";
 
-@use "./page/site-header";
+//PAGE
+@use "./page/site";
 
+// THEME
 @use "./themes/dark-theme";
