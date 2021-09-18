@@ -1,0 +1,94 @@
+@use "../abstracts/variables" as *;
+
+.card {
+  border-radius: 1.5rem;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+}
+
+.user {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 1.95rem;
+  padding-top: 3.2rem;
+  margin-bottom: 3.3rem;
+
+  &__img {
+    width: 7rem;
+    height: 7rem;
+    background-color: tomato;
+    border-radius: 50%;
+    grid-column: 1/2;
+    grid-row: 1/4;
+  }
+
+  &__name {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  &__account {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin-bottom: 0.6rem;
+  }
+
+  &__creation {
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+}
+
+.profile {
+  &__intro {
+    margin-bottom: 2.3rem;
+  }
+
+  &__table {
+    background-color: $dark-body;
+    width: 100%;
+    border-spacing: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 2.4rem;
+
+    & th {
+      padding-top: 1.8rem;
+    }
+
+    & td {
+      padding-bottom: 1.8rem;
+    }
+
+    & th,
+    & td {
+      text-align: center;
+      vertical-align: middle;
+      padding-left: 1rem;
+    }
+  }
+}
+
+.social {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  gap: 1.7rem;
+  padding-bottom: 4.9rem;
+
+  &__location--city {
+    margin-left: 1.925rem;
+  }
+
+  &__website--address {
+    margin-left: 1.301rem;
+  }
+
+  &__twitter--link {
+    margin-left: 1.3rem;
+  }
+
+  &__company--name {
+    margin-left: 1.3rem;
+  }
+}

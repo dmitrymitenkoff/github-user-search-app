@@ -32,7 +32,6 @@ h1 {
   font-weight: 400;
   font-family: inherit;
   font-size: 1.3rem;
-  line-height: 0.25rem;
 }
 ::-moz-placeholder {
   /* Firefox 19+ */
@@ -41,7 +40,6 @@ h1 {
   font-weight: 400;
   font-family: inherit;
   font-size: 1.3rem;
-  line-height: 0.25rem;
 }
 :-ms-input-placeholder {
   /* IE 10+ */
@@ -49,7 +47,6 @@ h1 {
   font-weight: 400;
   font-family: inherit;
   font-size: 1.3rem;
-  line-height: 0.25rem;
 }
 :-moz-placeholder {
   /* Firefox 18- */
@@ -57,7 +54,6 @@ h1 {
   font-weight: 400;
   font-family: inherit;
   font-size: 1.3rem;
-  line-height: 0.25rem;
 }
 
 // USER CARD
@@ -78,7 +74,7 @@ h1 {
     color: $azure;
   }
 
-  &__account-creation {
+  &__creation {
     font-weight: 400;
     font-size: 1.3rem;
     line-height: 1.925rem;
