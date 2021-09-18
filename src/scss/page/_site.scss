@@ -1,5 +1,12 @@
+@use "../abstracts/mixins" as *;
+
 header {
   margin-bottom: 3.6rem;
+
+  // TABLET
+  @include responsive(tablet) {
+    margin-bottom: 3.5rem;
+  }
 
   h1 {
     margin: 0;

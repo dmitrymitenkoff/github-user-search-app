@@ -1,9 +1,16 @@
 @use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
 .card {
   border-radius: 1.5rem;
   padding-left: 2.4rem;
   padding-right: 2.4rem;
+
+  // TABLET
+  @include responsive(tablet) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
 
 .user {
@@ -14,6 +21,13 @@
   padding-top: 3.2rem;
   margin-bottom: 3.3rem;
 
+  // TABLET
+  @include responsive(tablet) {
+    column-gap: 4.1rem;
+    padding-top: 5.2rem;
+    margin-bottom: 4.2rem;
+  }
+
   &__img {
     width: 7rem;
     height: 7rem;
@@ -21,6 +35,12 @@
     border-radius: 50%;
     grid-column: 1/2;
     grid-row: 1/4;
+
+    // TABLET
+    @include responsive(tablet) {
+      width: 11.7rem;
+      height: 11.7rem;
+    }
   }
 
   &__name {
@@ -32,6 +52,11 @@
     grid-column: 2/3;
     grid-row: 2/3;
     margin-bottom: 0.6rem;
+
+    // TABLET
+    @include responsive(tablet) {
+      margin-bottom: 0.4rem;
+    }
   }
 
   &__creation {
@@ -43,6 +68,11 @@
 .profile {
   &__intro {
     margin-bottom: 2.3rem;
+
+    // TABLET
+    @include responsive(tablet) {
+      margin-bottom: 2.8rem;
+    }
   }
 
   &__table {
@@ -52,12 +82,27 @@
     border-radius: 1rem;
     margin-bottom: 2.4rem;
 
+    // TABLET
+    @include responsive(tablet) {
+      margin-bottom: 3rem;
+    }
+
     & th {
       padding-top: 1.8rem;
+
+      // TABLET
+      @include responsive(tablet) {
+        padding-top: 1.5rem;
+      }
     }
 
     & td {
       padding-bottom: 1.8rem;
+
+      // TABLET
+      @include responsive(tablet) {
+        padding-bottom: 1.7rem;
+      }
     }
 
     & th,
@@ -65,6 +110,12 @@
       text-align: center;
       vertical-align: middle;
       padding-left: 1rem;
+
+      // TABLET
+      @include responsive(tablet) {
+        text-align: left;
+        padding-left: 3.2rem;
+      }
     }
   }
 }
@@ -76,19 +127,60 @@
   gap: 1.7rem;
   padding-bottom: 4.9rem;
 
-  &__location--city {
-    margin-left: 1.925rem;
+  // TABLET
+  @include responsive(tablet) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    column-gap: 2rem;
+    padding-bottom: 4rem;
   }
 
-  &__website--address {
-    margin-left: 1.301rem;
+  &__city {
+    &--name {
+      margin-left: 1.925rem;
+    }
+
+    // TABLET
+    @include responsive(tablet) {
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
   }
 
-  &__twitter--link {
-    margin-left: 1.3rem;
+  &__website {
+    &--address {
+      margin-left: 1.301rem;
+    }
+
+    // TABLET
+    @include responsive(tablet) {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
   }
 
-  &__company--name {
-    margin-left: 1.3rem;
+  &__twitter {
+    &--link {
+      margin-left: 1.3rem;
+    }
+
+    // TABLET
+    @include responsive(tablet) {
+      grid-column: 2/3;
+      grid-row: 1/2;
+    }
+  }
+
+  &__company {
+    &--name {
+      margin-left: 1.3rem;
+    }
+
+    // TABLET
+    @include responsive(tablet) {
+      grid-column: 2/3;
+      grid-row: 2/3;
+    }
   }
 }
