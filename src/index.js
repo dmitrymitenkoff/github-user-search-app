@@ -1,20 +1,24 @@
 const icon = document.querySelector('.mode-icon');
 const mode = document.querySelector('.mode');
-const toggles = document.querySelector('.toggles');
+const themeSwitcher = document.querySelector('.theme-switcher');
 
-function swapThemeModeText() {
+// Toggle between "Light" and "Dark" theme names
+function swapThemeText() {
   if (mode.innerHTML === 'Light') {
     mode.innerHTML = 'Dark';
-    icon.src = '../assets/icon-moon.svg';
   } else {
     mode.innerHTML = 'Light';
-    icon.src = '../assets/icon-sun.svg';
   }
 }
 
-function toggleDarkMode() {
-  swapThemeModeText();
+// Toggle between theme icons
+function toggleIcons() {
+  document.querySelector('.sun').classList.toggle('hidden');
+  document.querySelector('.moon').classList.toggle('hidden');
+}
 
+// Applies dark theme CSS styles to all elements that require changes
+function activateDarkTheme() {
   const elements = [
     document.querySelector('body'),
     document.querySelector('header'),
@@ -26,4 +30,12 @@ function toggleDarkMode() {
   });
 }
 
-toggles.addEventListener('click', toggleDarkMode);
+// Chanes the theme, text and icons as per user click-action on the theme switcher div
+function toggleDarkMode() {
+  swapThemeText();
+  toggleIcons();
+  activateDarkTheme();
+}
+
+// EVENT LISTENERS
+themeSwitcher.addEventListener('click', toggleDarkMode);
