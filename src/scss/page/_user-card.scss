@@ -76,7 +76,6 @@
   }
 
   &__table {
-    background-color: $dark-body;
     width: 100%;
     border-spacing: 1rem;
     border-radius: 1rem;
@@ -134,6 +133,11 @@
     grid-template-rows: auto;
     column-gap: 2rem;
     padding-bottom: 4rem;
+  }
+
+  li {
+    display: inline-flex;
+    align-content: center;
   }
 
   &__city {

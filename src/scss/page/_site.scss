@@ -12,6 +12,12 @@ header {
     margin: 0;
   }
 
+  .toggles {
+    display: flex;
+    justify-content: space-around;
+    outline: 1px solid red;
+  }
+
   .mode {
     text-align: right;
     margin-right: 1.6rem;
@@ -20,5 +26,6 @@ header {
   .mode-icon {
     width: 2rem;
     height: 2rem;
+    justify-self: flex-end;
   }
 }

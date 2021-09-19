@@ -1,13 +1,112 @@
 @use "../abstracts/variables" as *;
 
-body {
+body.dark {
   background-color: $dark-body;
 }
 
-input {
-  background-color: $cloud-burst;
+// HEADER
+header.dark {
+  h1 {
+    color: $white;
+  }
+  .mode {
+    color: $white;
+  }
+  .mode-icon {
+    fill: $white;
+  }
 }
 
-.card {
+// SEARCH SECTION
+.search.dark {
+  & input {
+    background-color: $cloud-burst;
+    border-color: $cloud-burst;
+    color: $white;
+  }
+
+  // Placeholder text colors
+  ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: $white;
+  }
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $white;
+  }
+  :-ms-input-placeholder {
+    /* IE 10+ */
+    color: $white;
+  }
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: $white;
+  }
+
+  & button {
+    background-color: $azure;
+    color: $white;
+
+    &:hover,
+    &:active {
+      background-color: $malibu;
+      transform: scale(0.99);
+    }
+
+    &:focus {
+      outline-style: solid;
+      outline-color: transparent;
+      box-shadow: 0 0 0 2px lighten($malibu, 20);
+    }
+  }
+}
+
+.card.dark {
   background-color: $cloud-burst;
+
+  .user {
+    &__name {
+      color: $white;
+    }
+    &__account {
+      color: $azure;
+    }
+    &__creation {
+      color: $white;
+    }
+  }
+
+  // Profile
+  .profile {
+    &__intro {
+      color: $white;
+    }
+
+    &__table {
+      background-color: $dark-body;
+      & th {
+        color: $white;
+      }
+
+      & td {
+        color: $white;
+      }
+    }
+  }
+
+  // Social
+  .social {
+    color: $white;
+
+    & a {
+      color: $white;
+    }
+
+    &__location--icon,
+    &__website--icon,
+    &__twitter--icon,
+    &__company--icon {
+      fill: $white;
+    }
+  }
 }

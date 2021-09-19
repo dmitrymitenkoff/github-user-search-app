@@ -12,7 +12,6 @@ h1 {
   font-weight: 700;
   font-size: 2.6rem;
   line-height: 3.851rem;
-  color: $white;
 }
 
 .mode {
@@ -21,7 +20,12 @@ h1 {
   line-height: 1.925rem;
   letter-spacing: 0.25rem;
   text-transform: uppercase;
-  color: $white;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.mode-icon {
+  cursor: pointer;
 }
 
 // SEARCH SECTION
@@ -29,7 +33,6 @@ h1 {
 // source: https://css-tricks.com/almanac/selectors/p/placeholder/
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
-  color: $white;
   font-weight: 400;
   font-family: inherit;
   font-size: 1.3rem;
@@ -41,7 +44,6 @@ h1 {
 }
 ::-moz-placeholder {
   /* Firefox 19+ */
-  color: $white;
   opacity: 1;
   font-weight: 400;
   font-family: inherit;
@@ -54,7 +56,6 @@ h1 {
 }
 :-ms-input-placeholder {
   /* IE 10+ */
-  color: $white;
   font-weight: 400;
   font-family: inherit;
   font-size: 1.3rem;
@@ -66,7 +67,6 @@ h1 {
 }
 :-moz-placeholder {
   /* Firefox 18- */
-  color: $white;
   font-weight: 400;
   font-family: inherit;
   font-size: 1.3rem;
@@ -87,7 +87,6 @@ h1 {
     font-weight: 700;
     font-size: 1.6rem;
     line-height: 2.37rem;
-    color: $white;
 
     // TABLET
     @include responsive(tablet) {
@@ -99,7 +98,6 @@ h1 {
   &__account {
     font-size: 1.3rem;
     line-height: 1.925rem;
-    color: $azure;
 
     // TABLET
     @include responsive(tablet) {
@@ -112,7 +110,6 @@ h1 {
     font-weight: 400;
     font-size: 1.3rem;
     line-height: 1.925rem;
-    color: $white;
 
     // TABLET
     @include responsive(tablet) {
@@ -127,7 +124,6 @@ h1 {
   &__intro {
     font-size: 1.3rem;
     line-height: 2.5rem;
-    color: $white;
 
     // TABLET
     @include responsive(tablet) {
@@ -140,7 +136,6 @@ h1 {
     & th {
       font-size: 1.1rem;
       line-height: 1.629rem;
-      color: $white;
 
       // TABLET
       @include responsive(tablet) {
@@ -153,7 +148,6 @@ h1 {
       font-weight: 700;
       font-size: 1.6rem;
       line-height: 2.37rem;
-      color: $white;
 
       // TABLET
       @include responsive(tablet) {
@@ -167,7 +161,6 @@ h1 {
 // Social
 .social {
   list-style-type: none;
-  color: $white;
   font-size: 1.3rem;
   line-height: 1.925rem;
 
@@ -178,7 +171,6 @@ h1 {
   }
 
   & a {
-    color: $white;
     text-decoration: none;
   }
 }

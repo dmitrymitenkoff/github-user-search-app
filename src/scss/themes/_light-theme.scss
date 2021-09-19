@@ -1,0 +1,111 @@
+@use "../abstracts/variables" as *;
+
+body {
+  background-color: $zircon;
+}
+
+// HEADER
+header {
+  h1 {
+    color: $ebony;
+  }
+  .mode {
+    color: $kashmir-blue;
+  }
+}
+
+// SEARCH SECTION
+.search {
+  & input {
+    background-color: $white;
+    box-shadow: 0px 16px 30px -10px hsla(227, 46%, 50%, 0.199);
+    border-color: $zircon;
+    color: $kashmir-blue;
+  }
+
+  // Placeholder text colors
+  ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: $kashmir-blue;
+  }
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $kashmir-blue;
+  }
+  :-ms-input-placeholder {
+    /* IE 10+ */
+    color: $kashmir-blue;
+  }
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: $kashmir-blue;
+  }
+
+  & button {
+    background-color: $azure;
+    color: $white;
+
+    &:hover,
+    &:active {
+      background-color: $malibu;
+      transform: scale(0.99);
+    }
+
+    &:focus {
+      outline-style: solid;
+      outline-color: transparent;
+      box-shadow: 0 0 0 2px lighten($malibu, 20);
+    }
+  }
+}
+
+.card {
+  background-color: $white;
+  box-shadow: 0px 16px 30px -10px hsla(227, 46%, 50%, 0.199);
+
+  .user {
+    &__name {
+      color: $dark-clay;
+    }
+    &__account {
+      color: $azure;
+    }
+    &__creation {
+      color: $lynch;
+    }
+  }
+
+  // Profile
+  .profile {
+    &__intro {
+      color: $kashmir-blue;
+    }
+
+    &__table {
+      background-color: $zircon;
+      & th {
+        color: $kashmir-blue;
+      }
+
+      & td {
+        color: $dark-clay;
+      }
+    }
+  }
+
+  // Social
+  .social {
+    color: $kashmir-blue;
+
+    & a {
+      color: $kashmir-blue;
+    }
+
+    &__location--icon,
+    &__website--icon,
+    &__twitter--icon,
+    &__company--icon {
+      fill: $kashmir-blue;
+    }
+  }
+}
