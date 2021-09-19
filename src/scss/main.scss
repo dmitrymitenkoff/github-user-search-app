@@ -11,8 +11,11 @@
 @use "./layout/header-layout";
 
 //PAGE
-@use "./page/site";
-@use "./page/user-card";
+@use "./page/card";
+@use "./page/header";
+@use "./page/profile";
+@use "./page/social";
+@use "./page/user";
 
 // THEME
 @use "./themes/dark-theme";

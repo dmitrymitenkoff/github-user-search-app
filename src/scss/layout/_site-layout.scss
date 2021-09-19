@@ -7,11 +7,27 @@ body {
 }
 
 .site {
+  display: grid;
   margin: auto;
   max-width: 32.7rem;
+
+  // PORTRAIT
+  @include responsive(portrait) {
+    max-width: 43rem;
+  }
 
   // TABLET
   @include responsive(tablet) {
     max-width: 57.3rem;
+  }
+
+  // DESKTOP
+  @include responsive(desktop) {
+    max-width: 73rem;
+  }
+
+  // DESKTOP
+  @include responsive(max) {
+    max-width: 85rem;
   }
 }

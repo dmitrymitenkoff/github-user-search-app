@@ -1,0 +1,72 @@
+@use "../abstracts/mixins" as *;
+
+.social {
+  grid-column: 2/4;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  gap: 1.7rem;
+  padding-bottom: 4.9rem;
+
+  // TABLET
+  @include responsive(tablet) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    column-gap: 2rem;
+    padding-bottom: 4rem;
+  }
+
+  li {
+    display: inline-flex;
+    align-content: center;
+  }
+
+  &__city {
+    &--name {
+      margin-left: 1.925rem;
+    }
+
+    // TABLET
+    @include responsive(tablet) {
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+  }
+
+  &__website {
+    &--address {
+      margin-left: 1.301rem;
+    }
+
+    // TABLET
+    @include responsive(tablet) {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+  }
+
+  &__twitter {
+    &--link {
+      margin-left: 1.3rem;
+    }
+
+    // TABLET
+    @include responsive(tablet) {
+      grid-column: 2/3;
+      grid-row: 1/2;
+    }
+  }
+
+  &__company {
+    &--name {
+      margin-left: 1.3rem;
+    }
+
+    // TABLET
+    @include responsive(tablet) {
+      grid-column: 2/3;
+      grid-row: 2/3;
+    }
+  }
+}

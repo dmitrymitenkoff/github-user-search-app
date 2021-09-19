@@ -1,0 +1,56 @@
+@use "../abstracts/mixins" as *;
+
+.profile {
+  grid-column: 2/4;
+  &__intro {
+    margin-bottom: 2.3rem;
+
+    // TABLET
+    @include responsive(tablet) {
+      margin-bottom: 2.8rem;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    border-spacing: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 2.4rem;
+
+    // TABLET
+    @include responsive(tablet) {
+      margin-bottom: 3rem;
+    }
+
+    & th {
+      padding-top: 1.8rem;
+
+      // TABLET
+      @include responsive(tablet) {
+        padding-top: 1.5rem;
+      }
+    }
+
+    & td {
+      padding-bottom: 1.8rem;
+
+      // TABLET
+      @include responsive(tablet) {
+        padding-bottom: 1.7rem;
+      }
+    }
+
+    & th,
+    & td {
+      text-align: center;
+      vertical-align: middle;
+      padding-left: 1rem;
+
+      // TABLET
+      @include responsive(tablet) {
+        text-align: left;
+        padding-left: 3.2rem;
+      }
+    }
+  }
+}

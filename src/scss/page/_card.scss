@@ -1,0 +1,20 @@
+@use "../abstracts/mixins" as *;
+
+.card {
+  border-radius: 1.5rem;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+
+  // TABLET
+  @include responsive(tablet) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  // Desktop
+  @include responsive(desktop) {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    grid-template-rows: auto;
+  }
+}

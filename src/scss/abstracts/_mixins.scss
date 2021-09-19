@@ -1,5 +1,12 @@
 @mixin responsive($breakpoint) {
-  // Tablet
+  // Tablet portrait
+  @if $breakpoint == portrait {
+    @media (min-width: 620px) {
+      @content;
+    }
+  }
+
+  // Tablet landscape
   @if $breakpoint == tablet {
     @media (min-width: 768px) {
       @content;
@@ -8,6 +15,13 @@
 
   // Desktop
   @if $breakpoint == desktop {
+    @media (min-width: 1020px) {
+      @content;
+    }
+  }
+
+  // MAX
+  @if $breakpoint == max {
     @media (min-width: 1440px) {
       @content;
     }
