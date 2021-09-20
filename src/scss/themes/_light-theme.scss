@@ -1,16 +1,26 @@
 @use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
 body {
   background-color: $zircon;
+  @include dark {
+    background-color: $dark-body;
+  }
 }
 
 // HEADER
 header {
   h1 {
     color: $ebony;
+    @include dark {
+      color: $white;
+    }
   }
   .mode {
     color: $kashmir-blue;
+    @include dark {
+      color: $white;
+    }
   }
 }
 
@@ -21,29 +31,51 @@ header {
     box-shadow: 0px 16px 30px -10px hsla(227, 46%, 50%, 0.199);
     border-color: $zircon;
     color: $kashmir-blue;
+
+    @include dark {
+      background-color: $cloud-burst;
+      border-color: $cloud-burst;
+      color: $white;
+    }
   }
 
   // Placeholder text colors
   ::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     color: $kashmir-blue;
+    @include dark {
+      color: $white;
+    }
   }
   ::-moz-placeholder {
     /* Firefox 19+ */
     color: $kashmir-blue;
+    @include dark {
+      color: $white;
+    }
   }
   :-ms-input-placeholder {
     /* IE 10+ */
     color: $kashmir-blue;
+    @include dark {
+      color: $white;
+    }
   }
   :-moz-placeholder {
     /* Firefox 18- */
     color: $kashmir-blue;
+    @include dark {
+      color: $white;
+    }
   }
 
   & button {
     background-color: $azure;
     color: $white;
+    @include dark {
+      background-color: $azure;
+      color: $white;
+    }
 
     &:hover,
     &:active {
@@ -63,15 +95,26 @@ header {
   background-color: $white;
   box-shadow: 0px 16px 30px -10px hsla(227, 46%, 50%, 0.199);
 
+  @include dark {
+    background-color: $cloud-burst;
+    box-shadow: none;
+  }
+
   .user {
     &__name {
       color: $dark-clay;
+      @include dark {
+        color: $white;
+      }
     }
     &__account {
       color: $azure;
     }
     &__creation {
       color: $lynch;
+      @include dark {
+        color: $white;
+      }
     }
   }
 
@@ -79,16 +122,28 @@ header {
   .profile {
     &__intro {
       color: $kashmir-blue;
+      @include dark {
+        color: $white;
+      }
     }
 
     &__table {
       background-color: $zircon;
+      @include dark {
+        background-color: $dark-body;
+      }
       & th {
         color: $kashmir-blue;
+        @include dark {
+          color: $white;
+        }
       }
 
       & td {
         color: $dark-clay;
+        @include dark {
+          color: $white;
+        }
       }
     }
   }
@@ -96,9 +151,15 @@ header {
   // Social
   .social {
     color: $kashmir-blue;
+    @include dark {
+      color: $white;
+    }
 
     & a {
       color: $kashmir-blue;
+      @include dark {
+        color: $white;
+      }
     }
 
     &__location--icon,
@@ -106,6 +167,9 @@ header {
     &__twitter--icon,
     &__company--icon {
       fill: $kashmir-blue;
+      @include dark {
+        fill: $white;
+      }
     }
   }
 }
