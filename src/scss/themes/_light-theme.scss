@@ -34,6 +34,7 @@ header {
 
     @include dark {
       background-color: $cloud-burst;
+      box-shadow: none;
       border-color: $cloud-burst;
       color: $white;
     }
@@ -107,7 +108,8 @@ header {
         color: $white;
       }
     }
-    &__account {
+    &__account,
+    & p {
       color: $azure;
     }
     &__creation {

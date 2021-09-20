@@ -25,7 +25,27 @@
   &__img {
     width: 7rem;
     height: 7rem;
-    background-color: tomato;
+    background-color: lightgrey;
+    border-radius: 50%;
+    grid-column: 1/2;
+    grid-row: 1/4;
+
+    // TABLET
+    @include responsive(tablet) {
+      width: 11.7rem;
+      height: 11.7rem;
+    }
+
+    // DESKTOP
+    @include responsive(desktop) {
+      grid-column: 1/2;
+    }
+  }
+
+  &__avatar {
+    width: 7rem;
+    height: 7rem;
+
     border-radius: 50%;
     grid-column: 1/2;
     grid-row: 1/4;
