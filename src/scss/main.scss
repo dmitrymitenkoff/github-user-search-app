@@ -1,22 +1,23 @@
 // GLOBAL
 
-@use "./base/global-styles";
-@use "./base/typography";
+@use './base/global-styles';
+@use './base/themes-styles';
+@use './base/typography';
 
 // COMPONENTS
-@use "./components/button";
-@use "./components/searchBar";
+@use './components/button';
+@use './components/searchBar';
 
 // LAYOUTS
-@use "./layout/site-layout";
-@use "./layout/header-layout";
+@use './layout/site-layout';
+@use './layout/header-layout';
 
 //PAGE
-@use "./page/card";
-@use "./page/header";
-@use "./page/profile";
-@use "./page/social";
-@use "./page/user";
+@use './page/card';
+@use './page/header';
+@use './page/profile';
+@use './page/social';
+@use './page/user';
 
 // THEME
 //@use "./themes/dark-theme";

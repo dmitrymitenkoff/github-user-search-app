@@ -1,22 +1,38 @@
-// COLORS
+// LIGHT MODE COLORS
 $azure: #0077ff;
-$lynch: #697c9b;
-$cloud-burst: #1e2b48;
+$lynch: #697c9a;
+$kashmir-blue: #4b699b;
+$ebony-clay: #2b3442;
+$zircon: #f6f8ff;
+$white: #fefefe;
+
+// DARK MODE COLORS
+$white-dark-mode: #ffffff;
+$big-stone: #141d2f;
+$cloud-burst: #1e2a47;
+
+// STATES
+$btn-hover: #60abff;
+$error: #f74646;
+
+$light-toggle-idle: #4b6a9b;
+$light-toggle-hover: #222731;
+$dark-toggle-idle: $white-dark-mode;
+$dark-toggle-hover: #90a4d4;
+
+$light-link: #4b6a9b;
 
 $ebony-clay: #4b699b;
 $malibu: #61abff;
-
-$white: #ffffff;
 
 // DARK MODE
 $dark-body: #141d2e;
 
 // LIGHT MODE
-$zircon: #f5f7ff;
+
 $dark-clay: #2a3341;
 
 $ebony: #212630;
-$kashmir-blue: #4b699b;
 
 // FONTS
 $space-mono: 'Space Mono';

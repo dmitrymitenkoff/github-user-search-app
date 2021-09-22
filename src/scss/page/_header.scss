@@ -1,5 +1,5 @@
-@use "../abstracts/mixins" as *;
-@use "../abstracts/variables" as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
 
 header {
   margin-bottom: 3.6rem;
@@ -13,19 +13,21 @@ header {
     margin: 0;
   }
 
-  .theme-switcher {
+  .user-toggle {
     display: flex;
-    justify-content: space-around;
   }
 
-  .mode {
-    text-align: right;
+  .toggle {
+    justify-content: space-around;
+    display: flex;
+  }
+
+  .toggle__text {
     margin-right: 1.6rem;
   }
 
   .mode-icon {
-    width: 2rem;
-    height: 2rem;
-    justify-self: flex-end;
+    width: 20px;
+    height: 20px;
   }
 }

@@ -1,0 +1,176 @@
+@use '../abstracts/variables' as *;
+:root {
+  --color-mode: 'light';
+
+  /* DARK COLORS*/
+  /* Dark Backgrounds */
+  --color-dark-body: #141d2f;
+  --color-dark-input: #1e2a47;
+  --color-dark-card: #1e2a47;
+  --color-dark-table: #141d2f;
+
+  /* Mode, input placeholder, input text, profile intro, table headers, social a, social icons */
+  --color-dark-primary: #4b699b;
+  /* User__name, table cells td */
+  --color-dark-secondary: #2a3341;
+  /* Logo */
+  --color-dark-tertiary: #212630;
+  /* User__creation - date*/
+  --color-dark-other: #697c9b;
+  /* Box shadow */
+  --color-dark-box-shadow: #455eba33;
+  /* Highlight color */
+  --color-highlight: #0077ff;
+
+  /* LIGHT COLORS*/
+  /* Logo, mode, mode-icon, input placeholder, input text, user__name, user__creation, profiel__intro, th, td, social, social a, social icons*/
+  --color-light-primary: #ffffff;
+  --color-light-secondary: #f5f7ff;
+
+  --background-body: var(--color-light-secondary);
+  --background-input: var(--color-light-primary);
+  --background-card: var(--color-light-primary);
+  --background-table: var(--color-light-secondary);
+
+  --logo: var(--color-dark-tertiary);
+  --mode: var(--color-dark-primary);
+  --input-text: var(--color-dark-primary);
+
+  --user-name: var(--color-dark-secondary);
+  --user-account: var(--color-highlight);
+  --user-creation: var(--color-dark-other);
+
+  --profile-intro: var(--color-dark-primary);
+  --th: var(--color-dark-primary);
+  --td: var(--color-dark-secondary);
+
+  --social: var(--color-dark-primary);
+}
+
+body {
+  background-color: var(--background-body);
+  color: var(--color-dark-primary);
+  transition: background 500ms ease-in-out, color 200ms ease;
+}
+
+h1 {
+  color: var(--logo);
+}
+
+.mode {
+  color: var(--mode);
+}
+
+.search input {
+  background-color: var(--background-input);
+  color: var(--color-dark-primary);
+  border-color: var(--color-dark-box-shadow);
+  box-shadow: 0px 16px 30px -10px var(--color-dark-box-shadow);
+}
+
+.search input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: var(--color-dark-primary);
+}
+.search input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: var(--color-dark-primary);
+}
+.search input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: var(--color-dark-primary);
+}
+.search input:-moz-placeholder {
+  /* Firefox 18- */
+  color: var(--color-dark-primary);
+}
+
+.card {
+  background-color: var(--background-card);
+  box-shadow: 0px 16px 30px -10px var(--color-dark-box-shadow);
+}
+
+.user__name {
+  color: var(--user-name);
+}
+.user__account {
+  color: var(--user-account);
+}
+.user__creation {
+  color: var(--user-creation);
+}
+
+.profile__intro {
+  color: var(--profile-intro);
+}
+
+.profile__table {
+  background-color: var(--background-table);
+}
+
+th {
+  color: var(--th);
+}
+
+td {
+  color: var(--td);
+}
+
+.social,
+.social a {
+  color: var(--social);
+}
+
+.social__location--icon,
+.social__website--icon,
+.social__twitter--icon,
+.social__company--icon {
+  fill: var(--social);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: 'dark';
+  }
+  :root:not([data-user-color-scheme]) {
+    --background-body: var(--color-dark-body);
+    --background-input: var(--color-dark-input);
+    --background-card: #1e2b48;
+    --background-table: var(--color-dark-body);
+
+    --logo: var(--color-light-primary);
+    --mode: var(--color-light-primary);
+    --input-text: var(--color-light-primary);
+
+    --user-name: var(--color-light-primary);
+    --user-account: var(--color-highlight);
+    --user-creation: var(--color-light-primary);
+
+    --profile-intro: var(--color-light-primary);
+    --th: var(--color-light-primary);
+    --td: var(--color-light-primary);
+
+    --social: var(--color-light-primary);
+  }
+}
+
+[data-user-color-scheme='dark'] {
+  --background-body: var(--color-dark-body);
+  --background-input: var(--color-dark-input);
+  --background-card: #1e2b48;
+  --background-table: var(--color-dark-body);
+
+  --logo: var(--color-light-primary);
+  --mode: var(--color-light-primary);
+  --input-text: var(--color-light-primary);
+
+  --user-name: var(--color-light-primary);
+  --user-account: var(--color-highlight);
+  --user-creation: var(--color-light-primary);
+
+  --profile-intro: var(--color-light-primary);
+  --th: var(--color-light-primary);
+  --td: var(--color-light-primary);
+
+  --social: var(--color-light-primary);
+}

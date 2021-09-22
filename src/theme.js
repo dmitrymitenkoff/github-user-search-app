@@ -29,20 +29,21 @@ function applySetting(passedSetting) {
       'data-user-color-scheme',
       currentSetting
     );
-    setButtonLabelAndStatus(currentSetting);
+    setTextAndIcon(currentSetting);
   } else {
-    setButtonLabelAndStatus(getCSSCustomProp(COLOR_MODE_KEY));
+    setTextAndIcon(getCSSCustomProp(COLOR_MODE_KEY));
   }
 }
 
 // Sets the text depending on what the current colour mode is.
 // Because it's always either 'dark' or 'light' value, either from local storage or the CSS property, the status can display what the colour mode currently is.
-function setButtonLabelAndStatus(currentSetting) {
-  modeToggleText.innerText = `${currentSetting === 'dark' ? 'light' : 'dark'}`;
+function setTextAndIcon(currentSetting) {
   if (currentSetting === 'dark') {
+    modeToggleText.innerText = 'light';
     moon.classList.add('hidden');
     sun.classList.remove('hidden');
   } else {
+    modeToggleText.innerText = 'dark';
     moon.classList.remove('hidden');
     sun.classList.add('hidden');
   }
