@@ -1,0 +1,18 @@
+@use "../abstracts/variables" as *;
+
+.btn {
+  background-color: $azure;
+  color: $white;
+
+  &:hover,
+  &:active {
+    background-color: $malibu;
+    transform: scale(0.99);
+  }
+
+  &:focus {
+    outline-style: solid;
+    outline-color: transparent;
+    box-shadow: 0 0 0 2px lighten($malibu, 20);
+  }
+}

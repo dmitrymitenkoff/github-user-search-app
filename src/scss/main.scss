@@ -4,6 +4,7 @@
 @use "./base/typography";
 
 // COMPONENTS
+@use "./components/button";
 @use "./components/searchBar";
 
 // LAYOUTS
@@ -18,5 +19,5 @@
 @use "./page/user";
 
 // THEME
-@use "./themes/dark-theme";
-@use "./themes/light-theme";
+//@use "./themes/dark-theme";
+//@use "./themes/light-theme";

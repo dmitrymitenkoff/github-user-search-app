@@ -1,0 +1,326 @@
+:root {
+  --color-scheme: light dark;
+  /* Light Mode Colors */
+  --azure: #0079ff;
+  --lynch: #697c9a;
+  --kashmir-blue: #4b6a9b;
+  --ebony-clay: #2b3442;
+  --box-shadow: #4660bb33;
+  --zircon: #f6f8ff;
+  --white: #ffffff;
+
+  /* Dark Mode Colors */
+  --stone: #141d2f;
+  --cloud-burst: #1e2a47;
+}
+
+body {
+  background: var(--zircon);
+  color: var(--kashmir-blue);
+  transition: background 100ms ease-in-out, color 100ms ease;
+}
+
+.logo {
+  color: var(--ebony-clay);
+}
+
+.toggle__text {
+  color: var(--kashmir-blue);
+}
+
+.search input {
+  background: var(--white);
+  color: var(--kashmir-blue);
+  border: 1px solid transparent;
+  box-shadow: 0px 16px 30px -10px var(--box-shadow);
+}
+.search input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: var(--kashmir-blue);
+}
+.search input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: var(--kashmir-blue);
+}
+.search input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: var(--kashmir-blue);
+}
+.search input:-moz-placeholder {
+  /* Firefox 18- */
+  color: var(--kashmir-blue);
+}
+
+.card {
+  background-color: var(--white);
+}
+.user__name {
+  color: var(--ebony-clay);
+}
+.user__account {
+  color: var(--azure);
+}
+.user__creation {
+  color: var(--lynch);
+}
+
+.profile__intro {
+  color: var(--kashmir-blue);
+}
+.profile__table {
+  background: var(--zircon);
+}
+th {
+  color: var(--kashmir-blue);
+}
+td {
+  color: var(--ebony-clay);
+}
+
+.social,
+.social a {
+  color: var(--kashmir-blue);
+}
+
+.social__location--icon,
+.social__website--icon,
+.social__twitter--icon,
+.social__company--icon {
+  fill: var(--kashmir-blue);
+}
+
+/* 
+++++++++++++++++++++++++++++++++++
+DARK THEME
+++++++++++++++++++++++++++++++++++ */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--stone);
+    color: var(--white);
+    transition: background 500ms ease-in-out, color 200ms ease;
+  }
+
+  .logo {
+    color: var(--white);
+  }
+
+  .toggle__text {
+    color: var(--white);
+  }
+
+  .search input {
+    background-color: var(--cloud-burst);
+    color: var(--white);
+    border: 1px solid transparent;
+    box-shadow: none;
+  }
+
+  .search input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: var(--white);
+  }
+  .search input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: var(--white);
+  }
+  .search input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: var(--white);
+  }
+  .search input:-moz-placeholder {
+    /* Firefox 18- */
+    color: var(--white);
+  }
+
+  .card {
+    background-color: var(--cloud-burst);
+  }
+  .user__name {
+    color: var(--white);
+  }
+  .user__account {
+    color: var(--azure);
+  }
+  .user__creation {
+    color: var(--white);
+  }
+
+  .profile__intro {
+    color: var(--white);
+  }
+
+  .profile__table {
+    background-color: var(--stone);
+  }
+  th {
+    color: var(--white);
+  }
+  td {
+    color: var(--white);
+  }
+
+  .social,
+  .social a {
+    color: var(--white);
+  }
+
+  .social__location--icon,
+  .social__website--icon,
+  .social__twitter--icon,
+  .social__company--icon {
+    fill: var(--white);
+  }
+}
+
+body.dark-theme {
+  background: var(--stone);
+  color: var(--white);
+  transition: background 500ms ease-in-out, color 200ms ease;
+}
+
+.logo.dark-theme {
+  color: var(--white);
+}
+
+.toggle__text.dark-theme {
+  color: var(--white);
+}
+
+.search input.dark-theme {
+  background-color: var(--cloud-burst);
+  color: var(--white);
+  border: 1px solid transparent;
+  box-shadow: none;
+}
+
+.search input.dark-theme::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: var(--white);
+}
+.search input.dark-theme::-moz-placeholder {
+  /* Firefox 19+ */
+  color: var(--white);
+}
+.search input.dark-theme:-ms-input-placeholder {
+  /* IE 10+ */
+  color: var(--white);
+}
+.search input.dark-theme:-moz-placeholder {
+  /* Firefox 18- */
+  color: var(--white);
+}
+
+.card.dark-theme {
+  background-color: var(--cloud-burst);
+}
+.user__name.dark-theme {
+  color: var(--white);
+}
+.user__account.dark-theme {
+  color: var(--azure);
+}
+.user__creation.dark-theme {
+  color: var(--white);
+}
+
+.profile__intro.dark-theme {
+  color: var(--white);
+}
+
+.profile__table.dark-theme {
+  background-color: var(--stone);
+}
+th.dark-theme {
+  color: var(--white);
+}
+td.dark-theme {
+  color: var(--white);
+}
+
+.social.dark-theme,
+.social a.dark-theme {
+  color: var(--white);
+}
+
+.social__location--icon.dark-theme,
+.social__website--icon.dark-theme,
+.social__twitter--icon.dark-theme,
+.social__company--icon.dark-theme {
+  fill: var(--white);
+}
+
+/* Overide dark mode */
+body.light-theme {
+  background: var(--zircon);
+  color: var(--kashmir-blue);
+  transition: background 100ms ease-in-out, color 100ms ease;
+}
+
+.logo.light-theme {
+  color: var(--ebony-clay);
+}
+
+.toggle__text.light-theme {
+  color: var(--kashmir-blue);
+}
+
+.search input.light-theme {
+  background: var(--white);
+  color: var(--kashmir-blue);
+  border: 1px solid transparent;
+  box-shadow: 0px 16px 30px -10px var(--box-shadow);
+}
+.search input.light-theme::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: var(--kashmir-blue);
+}
+.search input.light-theme::-moz-placeholder {
+  /* Firefox 19+ */
+  color: var(--kashmir-blue);
+}
+.search input.light-theme:-ms-input-placeholder {
+  /* IE 10+ */
+  color: var(--kashmir-blue);
+}
+.search input.light-theme:-moz-placeholder {
+  /* Firefox 18- */
+  color: var(--kashmir-blue);
+}
+
+.card.light-theme {
+  background-color: var(--white);
+}
+.user__name.light-theme {
+  color: var(--ebony-clay);
+}
+.user__account.light-theme {
+  color: var(--azure);
+}
+.user__creation.light-theme {
+  color: var(--lynch);
+}
+
+.profile__intro.light-theme {
+  color: var(--kashmir-blue);
+}
+.profile__table.light-theme {
+  background: var(--zircon);
+}
+th.light-theme {
+  color: var(--kashmir-blue);
+}
+td.light-theme {
+  color: var(--ebony-clay);
+}
+
+.social.light-theme,
+.social a.light-theme {
+  color: var(--kashmir-blue);
+}
+
+.social__location--icon.light-theme,
+.social__website--icon.light-theme,
+.social__twitter--icon.light-theme,
+.social__company--icon.light-theme {
+  fill: var(--kashmir-blue);
+}

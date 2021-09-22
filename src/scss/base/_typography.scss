@@ -124,6 +124,7 @@ h1 {
   &__intro {
     font-size: 1.3rem;
     line-height: 2.5rem;
+    opacity: 0.75;
 
     // TABLET
     @include responsive(tablet) {
@@ -134,6 +135,7 @@ h1 {
 
   &__table {
     & th {
+      font-weight: 400;
       font-size: 1.1rem;
       line-height: 1.629rem;
 
