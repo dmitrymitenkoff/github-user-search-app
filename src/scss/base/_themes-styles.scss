@@ -174,7 +174,6 @@ body {
   :root:not([data-user-color-scheme]) {
     --background-body: var(--color-dark-body);
     --background-input: var(--color-dark-input);
-    // --background-card: #1e2b48;
     --background-card: var(--color-dark-input);
     --background-table: var(--color-dark-body);
 
@@ -199,7 +198,6 @@ body {
 [data-user-color-scheme='dark'] {
   --background-body: var(--color-dark-body);
   --background-input: var(--color-dark-input);
-  // --background-card: #1e2b48;
   --background-card: var(--color-dark-input);
   --background-table: var(--color-dark-body);
 

@@ -6,7 +6,7 @@ This is a solution to the [GitHub user search app challenge on Frontend Mentor](
 
 - [Overview](#overview)
   - [The app](#the-app)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#screenshots)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -29,23 +29,15 @@ Users should be able to:
 - Switch between light and dark themes
 - Have the correct color scheme chosen for them based on their computer preferences.
 
-### Screenshot
+### Screenshots
 
 ![light-theme](./src/screenshots/light-theme.jpeg)
 ![dark-theme](./src/screenshots/dark-theme.jpeg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Repository: [GitHub](https://github.com/dmitrymitenkoff/github-user-search-app)
+- Live: [devfinder app](https://github-user-search-app-flame.vercel.app/)
 
 ## My process
 
@@ -56,15 +48,126 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Third-party APIs
+- Sass
+- Parcel web app bundler
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+1. Switching between light and dark modes.
+   I learned how to set dark and light themese automatically as per user's OS settings. I also implemented the ability for users to manually toggle between the themes and save to local storage the preferred one. The process wasn't straightforward and involved a number of steps both in CSS and JavaScript.
+
+i. I created a theme-style Sass partial into which I saved all the root variables (using CSS Custom Properties). The root styles are on the html element directly. I also set the "--color-mode" variable to "light" as a default theme. This value is then used in the JS theme switcher file: it tells the JavaScript what the user's theme preference is:
+
+```css
+:root {
+  --color-mode: 'light';
+  --color-light-primary: #ffffff;
+  --color-light-secondary: #f5f7ff;
+  --background-body: var(--color-light-secondary);
+  --background-input: var(--color-light-primary);
+  --background-card: var(--color-light-primary);
+  --background-table: var(--color-light-secondary);
+```
+
+ii. I then set basic color styles for the light theme and created a media query that deals with user's OS preferences - "prefers-color-scheme". Under the media query, I also added a "data-user-color-scheme" and set it to "dark". In the media query, I changed the root color mode to dark, like so:
+
+```css
+body {
+  background-color: var(--background-body);
+  color: var(--color-dark-primary);
+  transition: background 500ms ease-in-out, color 200ms ease;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: 'dark';
+  }
+  :root:not([data-user-color-scheme]) {
+    --background-body: var(--color-dark-body);
+    --background-input: var(--color-dark-input);
+    --background-card: var(--color-dark-input);
+    --background-table: var(--color-dark-body);
+  }
+}
+[data-user-color-scheme='dark'] {
+  --background-body: var(--color-dark-body);
+  --background-input: var(--color-dark-input);
+  --background-card: var(--color-dark-input);
+  --background-table: var(--color-dark-body);
+}
+```
+
+iii. In the JavaScript file I created variables to store user's preferences and settings in the local storage as well as targeted a number of DOM elements to let the user manually change themes. I then created a function that allowed me to extract the user's "--color-mode" value. The function returns either "light" or "dark":
+
+```js
+function getCSSCustomProp(propKey) {
+  let response = getComputedStyle(document.documentElement).getPropertyValue(
+    propKey
+  );
+  if (response.length) {
+    response = response.replace(/\"/g, '').trim();
+  }
+  return response;
+}
+```
+
+iv. After that, I created a function that either applies the user's theme preference stored in localStorage or if it's just passed in from the CSS color mode setting:
+
+```js
+function applySetting(passedSetting) {
+  let currentSetting = passedSetting || localStorage.getItem(STORAGE_KEY);
+  if (currentSetting) {
+    document.documentElement.setAttribute(
+      'data-user-color-scheme',
+      currentSetting
+    );
+    setTextAndIcon(currentSetting);
+  } else {
+    setTextAndIcon(getCSSCustomProp(COLOR_MODE_KEY));
+  }
+}eturn response;
+}
+```
+
+v. As the next step, I created a function to updated the toggle text and icon as per the user's preference. It sets the text depending on what teh current theme is, which is always either "dark" or "light":
+
+```js
+function setTextAndIcon(currentSetting) {
+  if (currentSetting === 'dark') {
+    modeToggleText.innerText = 'light';
+    moon.classList.add('hidden');
+    sun.classList.remove('hidden');
+  } else {
+    modeToggleText.innerText = 'dark';
+    moon.classList.remove('hidden');
+    sun.classList.add('hidden');
+  }
+}
+```
+
+vi. Next, I added a function to toggle themes. At first it attemps to use the current setting as set in the local storage. It then runs the value through a switch: if the mode is found, the function overrides it. If the mode value is not stored in the local storage, the function loads the mode value from CSS instead and overrides it:
+
+```js
+function toggleSetting() {
+  let currentSetting = localStorage.getItem(STORAGE_KEY);
+  switch (currentSetting) {
+    case null:
+      currentSetting =
+        getCSSCustomProp(COLOR_MODE_KEY) === 'dark' ? 'light' : 'dark';
+      break;
+    case 'light':
+      currentSetting = 'dark';
+      break;
+    case 'dark':
+      currentSetting = 'light';
+      break;
+  }
+  localStorage.setItem(STORAGE_KEY, currentSetting);
+  return currentSetting;
+}
+```
+
+vii. Finally, I added an event listener on the toggle to apply the current setting which is returned into the applySetting() function.
 
 To see how you can add code snippets, see below:
 
@@ -77,16 +180,6 @@ To see how you can add code snippets, see below:
   color: papayawhip;
 }
 ```
-
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉');
-};
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
