@@ -80,6 +80,7 @@
   &__creation {
     grid-column: 2/3;
     grid-row: 3/4;
+    align-self: center;
 
     // DESKTOP
     @include responsive(desktop) {
