@@ -1,18 +1,26 @@
-@use "../abstracts/variables" as *;
-@use "../abstracts/mixins" as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 // SEARCH CONTAINER
 .search {
   margin-bottom: 1.6rem;
-  position: relative;
+  // position: relative;
 
-  display: flex;
-  align-content: center;
-  justify-content: flex-start;
+  // display: flex;
+  // align-content: center;
+  // justify-content: flex-start;
 
   // TABLET
   @include responsive(tablet) {
     margin-bottom: 2.4rem;
+  }
+
+  form {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
   }
 
   // SEARCH ICON
@@ -66,6 +74,22 @@
       height: 6.9rem;
       padding-left: 7.994rem;
       font-size: 1.8rem;
+    }
+  }
+
+  // ERROR MESSAGE
+  .errorMsg {
+    color: $error;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2.222rem;
+    position: absolute;
+    align-self: center;
+    right: 9.5rem;
+
+    // TABLET
+    @include responsive(tablet) {
+      right: 15rem;
     }
   }
 

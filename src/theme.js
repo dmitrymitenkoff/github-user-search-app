@@ -4,8 +4,8 @@ const COLOR_MODE_KEY = '--color-mode'; // extracts the current CSS Custom Proper
 const modeToggleButton = document.querySelector('.toggle');
 const modeToggleText = document.querySelector('.toggle__text');
 const modeToggleStatus = document.querySelector('.status');
-const sun = document.querySelector('.sun');
-const moon = document.querySelector('.moon');
+const sun = document.querySelector('.sunSvgEl');
+const moon = document.querySelector('.moonSvgEl');
 
 // Extracts the --color-mode value:
 // The end result will be either "light" or "dark", depending on the media query

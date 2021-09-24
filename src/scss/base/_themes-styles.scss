@@ -2,130 +2,169 @@
 :root {
   --color-mode: 'light';
 
-  /* DARK COLORS*/
-  /* Dark Backgrounds */
   --color-dark-body: #141d2f;
   --color-dark-input: #1e2a47;
   --color-dark-card: #1e2a47;
   --color-dark-table: #141d2f;
 
-  /* Mode, input placeholder, input text, profile intro, table headers, social a, social icons */
   --color-dark-primary: #4b699b;
-  /* User__name, table cells td */
   --color-dark-secondary: #2a3341;
-  /* Logo */
   --color-dark-tertiary: #212630;
-  /* User__creation - date*/
   --color-dark-other: #697c9b;
-  /* Box shadow */
   --color-dark-box-shadow: #455eba33;
-  /* Highlight color */
   --color-highlight: #0077ff;
 
-  /* LIGHT COLORS*/
-  /* Logo, mode, mode-icon, input placeholder, input text, user__name, user__creation, profiel__intro, th, td, social, social a, social icons*/
   --color-light-primary: #ffffff;
   --color-light-secondary: #f5f7ff;
 
+  --toggle-hover-color: #222731;
+  --toggle-hover-color-dark-mode: #90a4d4;
+
+  // Setting colors (variables above) to page element variables
+  //Backgrounds
   --background-body: var(--color-light-secondary);
   --background-input: var(--color-light-primary);
   --background-card: var(--color-light-primary);
   --background-table: var(--color-light-secondary);
 
+  // Header text colors
   --logo: var(--color-dark-tertiary);
-  --mode: var(--color-dark-primary);
+  --toggle__text: var(--color-dark-primary);
   --input-text: var(--color-dark-primary);
+  --toggle-cover: var(--toggle-hover-color);
 
+  // User card text colors
   --user-name: var(--color-dark-secondary);
   --user-account: var(--color-highlight);
   --user-creation: var(--color-dark-other);
-
+  --box-shadow: 0px 16px 30px -10px var(--color-dark-box-shadow);
   --profile-intro: var(--color-dark-primary);
   --th: var(--color-dark-primary);
   --td: var(--color-dark-secondary);
 
+  // Links
   --social: var(--color-dark-primary);
+  --link-hover-color: #4b6a9b;
 }
 
+// LIGHT THEME STYLES
 body {
   background-color: var(--background-body);
   color: var(--color-dark-primary);
   transition: background 500ms ease-in-out, color 200ms ease;
 }
 
-h1 {
+// HEADER
+.logo {
   color: var(--logo);
 }
-
-.mode {
-  color: var(--mode);
+.toggle__text {
+  color: var(--toggle__text);
+  &:hover {
+    color: var(--toggle-cover);
+  }
+}
+.mode-icon:hover {
+  fill: var(--toggle-cover);
 }
 
+// INPUT
 .search input {
   background-color: var(--background-input);
-  color: var(--color-dark-primary);
+  color: var(--input-text);
   border-color: var(--color-dark-box-shadow);
-  box-shadow: 0px 16px 30px -10px var(--color-dark-box-shadow);
+  box-shadow: var(--box-shadow);
+
+  &::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: var(--input-text);
+    opacity: 1;
+  }
+  &::-moz-placeholder {
+    /* Firefox 19+ */
+    color: var(--input-text);
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    /* IE 10+ */
+    color: var(--input-text);
+    opacity: 1;
+  }
+  &:-moz-placeholder {
+    /* Firefox 18- */
+    color: var(--input-text);
+    opacity: 1;
+  }
 }
 
-.search input::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  color: var(--color-dark-primary);
-}
-.search input::-moz-placeholder {
-  /* Firefox 19+ */
-  color: var(--color-dark-primary);
-}
-.search input:-ms-input-placeholder {
-  /* IE 10+ */
-  color: var(--color-dark-primary);
-}
-.search input:-moz-placeholder {
-  /* Firefox 18- */
-  color: var(--color-dark-primary);
-}
-
+// CARD
 .card {
   background-color: var(--background-card);
-  box-shadow: 0px 16px 30px -10px var(--color-dark-box-shadow);
-}
+  box-shadow: var(--box-shadow);
 
-.user__name {
-  color: var(--user-name);
-}
-.user__account {
-  color: var(--user-account);
-}
-.user__creation {
-  color: var(--user-creation);
-}
+  // USER
+  .user__name {
+    color: var(--user-name);
+  }
+  .user__account {
+    color: var(--user-account);
+  }
+  .user__creation {
+    color: var(--user-creation);
+  }
 
-.profile__intro {
-  color: var(--profile-intro);
-}
+  // PROFILE
+  .profile__intro {
+    color: var(--profile-intro);
+  }
 
-.profile__table {
-  background-color: var(--background-table);
-}
+  .profile__table {
+    background-color: var(--background-table);
 
-th {
-  color: var(--th);
-}
+    th {
+      color: var(--th);
+    }
 
-td {
-  color: var(--td);
-}
+    td {
+      color: var(--td);
+    }
+  }
 
-.social,
-.social a {
-  color: var(--social);
-}
+  // SOCIAL
+  .social {
+    color: var(--social);
 
-.social__location--icon,
-.social__website--icon,
-.social__twitter--icon,
-.social__company--icon {
-  fill: var(--social);
+    //https://paulund.co.uk/css-animation-link-underline
+    & a {
+      color: var(--social);
+      position: relative;
+      text-decoration: none;
+    }
+
+    & a:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--link-hover-color);
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 400ms ease-in-out;
+    }
+
+    & a:hover:before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+  }
+  .social__location--icon,
+  .social__website--icon,
+  .social__twitter--icon,
+  .social__company--icon {
+    fill: var(--social);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -135,33 +174,37 @@ td {
   :root:not([data-user-color-scheme]) {
     --background-body: var(--color-dark-body);
     --background-input: var(--color-dark-input);
-    --background-card: #1e2b48;
+    // --background-card: #1e2b48;
+    --background-card: var(--color-dark-input);
     --background-table: var(--color-dark-body);
 
     --logo: var(--color-light-primary);
-    --mode: var(--color-light-primary);
+    --toggle__text: var(--color-light-primary);
     --input-text: var(--color-light-primary);
 
     --user-name: var(--color-light-primary);
     --user-account: var(--color-highlight);
     --user-creation: var(--color-light-primary);
-
     --profile-intro: var(--color-light-primary);
     --th: var(--color-light-primary);
     --td: var(--color-light-primary);
-
     --social: var(--color-light-primary);
+
+    --box-shadow: none;
+    --link-hover-color: var(--color-light-primary);
+    --toggle-cover: var(--toggle-hover-color-dark-mode);
   }
 }
 
 [data-user-color-scheme='dark'] {
   --background-body: var(--color-dark-body);
   --background-input: var(--color-dark-input);
-  --background-card: #1e2b48;
+  // --background-card: #1e2b48;
+  --background-card: var(--color-dark-input);
   --background-table: var(--color-dark-body);
 
   --logo: var(--color-light-primary);
-  --mode: var(--color-light-primary);
+  --toggle__text: var(--color-light-primary);
   --input-text: var(--color-light-primary);
 
   --user-name: var(--color-light-primary);
@@ -173,4 +216,7 @@ td {
   --td: var(--color-light-primary);
 
   --social: var(--color-light-primary);
+  --box-shadow: none;
+  --link-hover-color: var(--color-light-primary);
+  --toggle-cover: var(--toggle-hover-color-dark-mode);
 }

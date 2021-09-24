@@ -1,5 +1,5 @@
-@use "../abstracts/variables" as *;
-@use "../abstracts/mixins" as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .user {
   grid-column: 1/4;
@@ -25,7 +25,6 @@
   &__img {
     width: 7rem;
     height: 7rem;
-    background-color: lightgrey;
     border-radius: 50%;
     grid-column: 1/2;
     grid-row: 1/4;

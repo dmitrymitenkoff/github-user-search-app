@@ -1,4 +1,4 @@
-@use "../abstracts/mixins" as *;
+@use '../abstracts/mixins' as *;
 
 .social {
   grid-column: 2/4;
@@ -20,6 +20,7 @@
   li {
     display: inline-flex;
     align-content: center;
+    // gap: 1rem;
   }
 
   &__city {
@@ -35,7 +36,7 @@
   }
 
   &__website {
-    &--address {
+    &__text {
       margin-left: 1.301rem;
     }
 
@@ -47,7 +48,7 @@
   }
 
   &__twitter {
-    &--link {
+    &__text {
       margin-left: 1.3rem;
     }
 
@@ -59,7 +60,7 @@
   }
 
   &__company {
-    &--name {
+    &__text {
       margin-left: 1.3rem;
     }
 

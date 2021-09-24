@@ -1,5 +1,5 @@
-@use "../abstracts/variables" as *;
-@use "../abstracts/mixins" as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 body {
   font-family: $space-mono, sans-serif;
@@ -172,7 +172,7 @@ h1 {
     line-height: 2.222rem;
   }
 
-  & a {
-    text-decoration: none;
-  }
+  // & a {
+  //   text-decoration: none;
+  // }
 }
