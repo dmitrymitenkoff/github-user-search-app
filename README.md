@@ -11,10 +11,8 @@ This is a solution to the [GitHub user search app challenge on Frontend Mentor](
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -55,9 +53,9 @@ Users should be able to:
 ### What I learned
 
 1. Switching between light and dark modes.
-   I learned how to set dark and light themese automatically as per user's OS settings. I also implemented the ability for users to manually toggle between the themes and save to local storage the preferred one. The process wasn't straightforward and involved a number of steps both in CSS and JavaScript.
+   I learned how to set dark and light themese automatically as per the user's OS settings. I also implemented the ability for users to toggle between the themes and save to local storage a preferred theme. The process wasn't straightforward and involved a number of steps both in CSS and JavaScript.
 
-i. I created a theme-style Sass partial into which I saved all the root variables (using CSS Custom Properties). The root styles are on the html element directly. I also set the "--color-mode" variable to "light" as a default theme. This value is then used in the JS theme switcher file: it tells the JavaScript what the user's theme preference is:
+i. I created a theme-style Sass partial into which I saved all the root variables (using CSS Custom Properties). The root styles apply to the html element directly. I also set the "--color-mode" variable to "light" as a default theme. This value is then used in the JS theme switcher file: it tells the JavaScript what the user's theme preference is:
 
 ```css
 :root {
@@ -97,7 +95,7 @@ body {
 }
 ```
 
-iii. In the JavaScript file I created variables to store user's preferences and settings in the local storage as well as targeted a number of DOM elements to let the user manually change themes. I then created a function that allowed me to extract the user's "--color-mode" value. The function returns either "light" or "dark":
+iii. In the JavaScript file I created variables to store user's preferences and settings saved in the local storage as well as targeted a number of DOM elements to let the user manually change themes. I then created a function that allowed me to extract the user's "--color-mode" value. The function returns either "light" or "dark":
 
 ```js
 function getCSSCustomProp(propKey) {
@@ -111,7 +109,7 @@ function getCSSCustomProp(propKey) {
 }
 ```
 
-iv. After that, I created a function that either applies the user's theme preference stored in localStorage or if it's just passed in from the CSS color mode setting:
+iv. After that, I created a function that either applies the user's theme preference stored in localStorage or the value from the CSS color mode setting:
 
 ```js
 function applySetting(passedSetting) {
@@ -129,7 +127,7 @@ function applySetting(passedSetting) {
 }
 ```
 
-v. As the next step, I created a function to updated the toggle text and icon as per the user's preference. It sets the text depending on what teh current theme is, which is always either "dark" or "light":
+v. As the next step, I created a function to updated the toggle text and icon as per the user's theme choice. It sets the toggle text depending on what teh current theme is, which is always either "dark" or "light" (dark theme = light text)
 
 ```js
 function setTextAndIcon(currentSetting) {
@@ -145,7 +143,7 @@ function setTextAndIcon(currentSetting) {
 }
 ```
 
-vi. Next, I added a function to toggle themes. At first it attemps to use the current setting as set in the local storage. It then runs the value through a switch: if the mode is found, the function overrides it. If the mode value is not stored in the local storage, the function loads the mode value from CSS instead and overrides it:
+vi. Next, I added a function to toggle themes. At first it attemps to use the current setting as set in the local storage. It then runs the value through a switch: if the theme mode is found, the function overrides it. If the mode value is not stored in the local storage, the function loads the mode value from CSS instead and overrides it:
 
 ```js
 function toggleSetting() {
@@ -169,41 +167,19 @@ function toggleSetting() {
 
 vii. Finally, I added an event listener on the toggle to apply the current setting which is returned into the applySetting() function.
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Create a user controlled dark or light mode](https://piccalil.li/tutorial/create-a-user-controlled-dark-or-light-mode/)
+- [A Complete Guide to Dark Mode on the Web](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/)
+- [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
+- [Event focus/blur](https://javascript.info/focus-blur)
+- [Media Queries for Standard Devices](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/)
+- [CSS Animation Link Underline](https://paulund.co.uk/css-animation-link-underline)
+- [Content Jumping (and How To Avoid It)](https://css-tricks.com/content-jumping-avoid/)
+- [Change Color of SVG on Hover](https://css-tricks.com/change-color-of-svg-on-hover/)
+- [CSS Button Styling Guide](https://moderncss.dev/css-button-styling-guide/)
+- [3 CSS Grid Techniques to Make You a Grid Convert](https://moderncss.dev/3-css-grid-techniques-to-make-you-a-grid-convert/)
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Twitter - [@walzinthedesert](https://www.twitter.com/walzinthedesert)
